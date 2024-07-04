@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productive Chrome Extension</title>
-</head>
 <body>
 
 <h1>Productive</h1>
@@ -100,4 +93,3 @@
 <p>Handles alarms and notifications in the background.</p>
 
 </body>
-</html>
