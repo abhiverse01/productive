@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productive Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
+      background: url('icons/background.jpg') no-repeat center center fixed;
       background-size: cover;
       margin: 0;
       padding: 0;
@@ -28,15 +30,15 @@
       top: 0;
     }
     .clock {
-      font-size: 48px;
+      font-size: 40px;
       font-weight: 500;
     }
     .date {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 400;
     }
     .logo {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
       cursor: pointer;
       opacity: 0.7;
@@ -49,12 +51,14 @@
     .task-container {
       display: none;
       width: 80%;
-      max-width: 800px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      margin-top: 60px;
+      overflow-y: auto;
+      max-height: 60vh;
     }
     .task {
       display: flex;
@@ -62,46 +66,65 @@
       align-items: center;
       background: rgba(255, 255, 255, 0.2);
       margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 4px;
+      padding: 15px;
+      border-radius: 8px;
       width: 100%;
     }
     .delete-btn {
-      background-color: #dc3545;
+      background-color: #e74c3c;
       color: white;
       border: none;
       border-radius: 50%;
       cursor: pointer;
-      padding: 5px 10px;
+      padding: 6px 12px;
       font-size: 16px;
     }
     .delete-btn:hover {
-      background-color: #c82333;
+      background-color: #c0392b;
     }
     .task-input {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 20px;
-      justify-content: center;
       width: 100%;
     }
     .task-input input, .task-input button {
-      margin: 5px;
-      padding: 10px;
-      width: 80%;
-      max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      margin: 8px 0;
+      padding: 12px;
+      width: 90%;
+      max-width: 500px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
       font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .task-input button {
-      background-color: #007bff;
+      background-color: #3498db;
       color: white;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     .task-input button:hover {
-      background-color: #0056b3;
+      background-color: #2980b9;
+    }
+    .task-priority {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .task-priority label {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    .task-priority select {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -113,12 +136,21 @@
   <div class="logo" id="logo" style="position: absolute; top: 50px; right: 20px;">Productive</div>
   <div class="task-container" id="taskContainer">
     <div class="task-input">
-      <input type="text" id="taskInput" placeholder="Enter a task" required>
-      <input type="datetime-local" id="taskTime" required>
-      <button type="submit" id="addTaskButton">Add Task</button>
+      <input type="text" id="taskInput" placeholder="Enter a task" required aria-label="Task input">
+      <input type="datetime-local" id="taskTime" required aria-label="Task time">
+      <button type="submit" id="addTaskButton" aria-label="Add task">Add Task</button>
+    </div>
+    <div class="task-priority">
+      <label for="prioritySelect">Priority:</label>
+      <select id="prioritySelect" aria-label="Priority select">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
     </div>
     <ul id="taskList"></ul>
   </div>
+  <script src="common.js"></script>
   <script src="dashboard.js"></script>
 </body>
 </html>
