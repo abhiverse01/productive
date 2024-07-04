@@ -2,11 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     updateClockAndDate();
     setInterval(updateClockAndDate, 1000);
     displayTasks();
+  
+    document.getElementById('logo').addEventListener('click', toggleTaskContainer);
+    document.getElementById('addTaskButton').addEventListener('click', addTask);
   });
   
   function updateClockAndDate() {
     const now = new Date();
-    document.getElementById('clock').textContent = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    document.getElementById('clock').textContent = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit', second: '2-digit'});
     document.getElementById('date').textContent = now.toLocaleDateString([], {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
   }
   

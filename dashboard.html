@@ -6,7 +6,8 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #e09, #d0e);
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
       margin: 0;
       padding: 0;
       display: flex;
@@ -20,9 +21,11 @@
     .header {
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      width: 90%;
       padding: 20px;
       box-sizing: border-box;
+      position: absolute;
+      top: 0;
     }
     .clock {
       font-size: 48px;
@@ -33,23 +36,25 @@
       font-weight: 400;
     }
     .logo {
-      font-size: 48px;
+      font-size: 24px;
       font-weight: 700;
       cursor: pointer;
-      margin: 40px 0;
       opacity: 0.7;
       transition: opacity 0.3s;
+      margin-top: 20px;
     }
     .logo:hover {
       opacity: 1;
     }
     .task-container {
+      display: none;
       width: 80%;
       max-width: 800px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
     }
     .task {
       display: flex;
@@ -105,12 +110,12 @@
     <div class="clock" id="clock">00:00</div>
     <div class="date" id="date">Monday, January 1, 2024</div>
   </div>
-  <div class="logo" onclick="toggleTaskContainer()">Productive</div>
-  <div class="task-container" id="taskContainer" style="display: none;">
+  <div class="logo" id="logo" style="position: absolute; top: 50px; right: 20px;">Productive</div>
+  <div class="task-container" id="taskContainer">
     <div class="task-input">
       <input type="text" id="taskInput" placeholder="Enter a task" required>
       <input type="datetime-local" id="taskTime" required>
-      <button type="submit" onclick="addTask()">Add Task</button>
+      <button type="submit" id="addTaskButton">Add Task</button>
     </div>
     <ul id="taskList"></ul>
   </div>
