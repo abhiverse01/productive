@@ -6,13 +6,32 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      padding: 20px;
-      background-color: #f7f9fc;
+      background-color: #f0f2f5;
       margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 400px;
+      overflow: hidden;
+    }
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 100%;
+      max-width: 360px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .logo {
+      width: 50px;
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 24px;
-      text-align: center;
+      margin-bottom: 20px;
       color: #333;
     }
     form {
@@ -24,7 +43,7 @@
     input, button {
       margin: 5px;
       padding: 10px;
-      width: 90%;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 16px;
@@ -48,11 +67,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: white;
+      background-color: #f9f9f9;
       margin-bottom: 10px;
       padding: 10px;
       border-radius: 4px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
     .delete-btn {
       background-color: #dc3545;
@@ -69,13 +89,16 @@
   </style>
 </head>
 <body>
-  <h1>Task Manager</h1>
-  <form id="taskForm">
-    <input type="text" id="taskInput" placeholder="Enter a task" required>
-    <input type="datetime-local" id="taskTime" required>
-    <button type="submit">Add Task</button>
-  </form>
-  <ul id="taskList"></ul>
+  <div class="card">
+    <img src="icons/arclogo.jpg" class="logo" alt="Logo">
+    <h1>Task Manager</h1>
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Enter a task" required>
+      <input type="datetime-local" id="taskTime" required>
+      <button type="submit">Add Task</button>
+    </form>
+    <ul id="taskList"></ul>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>

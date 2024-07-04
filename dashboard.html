@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Productive Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #e09, #d0e);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .clock {
+      font-size: 48px;
+      font-weight: 500;
+    }
+    .date {
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .logo {
+      font-size: 48px;
+      font-weight: 700;
+      cursor: pointer;
+      margin: 40px 0;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .logo:hover {
+      opacity: 1;
+    }
+    .task-container {
+      width: 80%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.2);
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      width: 100%;
+    }
+    .delete-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+    .task-input {
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: center;
+      width: 100%;
+    }
+    .task-input input, .task-input button {
+      margin: 5px;
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .task-input button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .task-input button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="clock" id="clock">00:00</div>
+    <div class="date" id="date">Monday, January 1, 2024</div>
+  </div>
+  <div class="logo" onclick="toggleTaskContainer()">Productive</div>
+  <div class="task-container" id="taskContainer" style="display: none;">
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter a task" required>
+      <input type="datetime-local" id="taskTime" required>
+      <button type="submit" onclick="addTask()">Add Task</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

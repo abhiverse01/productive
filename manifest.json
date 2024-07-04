@@ -1,23 +1,19 @@
 {
     "manifest_version": 3,
-    "name": "Task Manager",
+    "name": "Productive",
     "version": "1.0",
-    "description": "A Chrome extension to manage and remind you of daily and long-term tasks.",
+    "description": "A Chrome extension to manage and remind you of daily and long-term tasks with a productivity dashboard.",
     "permissions": [
       "storage",
       "notifications",
-      "alarms"
+      "alarms",
+      "tabs"
     ],
+    "chrome_url_overrides": {
+      "newtab": "dashboard.html"
+    },
     "background": {
       "service_worker": "background.js"
-    },
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-      }
     },
     "icons": {
       "16": "icons/icon16.png",
