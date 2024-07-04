@@ -2,33 +2,39 @@
 <html>
 <head>
   <title>Task Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      background-color: #f7f7f7;
+      font-family: 'Roboto', sans-serif;
+      padding: 20px;
+      background-color: #f7f9fc;
+      margin: 0;
     }
     h1 {
       font-size: 24px;
       text-align: center;
+      color: #333;
     }
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 20px;
     }
     input, button {
       margin: 5px;
       padding: 10px;
-      width: 80%;
+      width: 90%;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font-size: 16px;
     }
     button {
       background-color: #007bff;
       color: white;
       border: none;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
     button:hover {
       background-color: #0056b3;
@@ -36,6 +42,7 @@
     ul {
       list-style-type: none;
       padding: 0;
+      margin: 0;
     }
     .task {
       display: flex;
@@ -54,6 +61,10 @@
       border-radius: 50%;
       cursor: pointer;
       padding: 5px 10px;
+      font-size: 16px;
+    }
+    .delete-btn:hover {
+      background-color: #c82333;
     }
   </style>
 </head>
