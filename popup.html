@@ -9,9 +9,11 @@
       margin: 0;
       font-family: 'Roboto', sans-serif;
       display: flex;
+      height: 100vh;
+      overflow: hidden;
     }
     .side-pane {
-      height: 100vh;
+      height: 100%;
       width: 300px;
       background-color: #f7f9fc;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,6 +22,10 @@
       align-items: center;
       padding: 20px;
       box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 2147483647;
     }
     .header {
       width: 100%;
@@ -102,7 +108,7 @@
     <div class="header">
       <div class="logo" id="logo">Productive</div>
       <div class="clock" id="clock">00:00</div>
-      <div class="date" id="date">Monday, January 1, 2024</div>
+      <div class="date" id="date">Monday, July 8, 2024</div>
     </div>
     <div class="task-input">
       <input type="text" id="taskInput" placeholder="Enter a task" required>
